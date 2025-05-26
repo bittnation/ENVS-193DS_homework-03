@@ -44,12 +44,11 @@ personal_data_clean <- personal_data |>
 
 
 
-
-```{r}
-ggplot(data = personal_data_clean, #chossing data set
+```{r data-plot}
+ggplot(data = personal_data_clean, #choosing data set
        aes(x = location, 
            y = productivity_hours, 
-           fill = location)) + #settinbg axis 
+           fill = location)) + #setting axis 
   geom_boxplot() +
   geom_jitter(height = 0, width = 0.2, alpha = 0.6) +
   scale_fill_manual(values = c("Home" = "#008080", "Library" = "#800080")) + #choosing custom colors 
@@ -62,16 +61,10 @@ ggplot(data = personal_data_clean, #chossing data set
 ```
 
 
-
-\[insert written response here\]
-
 ## c. Caption
 
-```{r}
-# insert code here
-```
+Figure 1. Boxplot with jittered points showing the distribution of daily productivity hours at home and in the library. Time values were converted from HH:MM to decimal format to compare average productivity between locations. The figure highlights noticeable differences in productivity patterns depending on where studying takes place
 
-\[insert written response here\]
 
 ## d. Table Presentation
 
