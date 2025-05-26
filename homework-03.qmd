@@ -20,7 +20,7 @@ library(janitor)
 
 ## a. Data Summarizing
 
-\[insert written response here\]
+I could calculate the mean hours of productivity to compare between locations, such as home versus the library, because I suspect that my environment affects how focused I am. This comparison would help determine if studying in the library leads to longer or more productive work sessions than working at home.
 
 ## b. Visualization
 
