@@ -5,9 +5,7 @@ format: html
 editor: visual
 ---
 
-
 GitHub Repository: https://github.com/bittnation/ENVS-193DS_homework-03.git
-
 
 ```{r reading-packages}
 
@@ -17,4 +15,79 @@ library(flextable)
 library(janitor)
 
 ```
+
+# Problem 1. Personal Data
+
+## a. Data Summarizing
+
+\[insert written response here\]
+
+## b. Visualization
+
+```{r}
+# insert code here
+```
+
+\[insert written response here\]
+
+## c. Caption
+
+```{r}
+# insert code here
+```
+
+\[insert written response here\]
+
+## d. Table Presentation
+
+```{r}
+# insert code here
+```
+
+\[insert written response here\]
+
+# Problem 2. Affective Visualization
+
+## a. describe affective visualization
+
+```{r}
+# insert code here
+```
+
+## b. sketch
+
+```{r}
+# insert code here
+```
+
+## c. visualization draft
+
+\[insert written response here\]
+
+## d. artist statement
+
+
+# Problem 3. Statistical Critique 
+
+```{r}
+# insert any cleaning/wrangling code you need here
+```
+
+## a. Revist and summerarize
+
+```{r}
+# insert code here
+```
+
+## b. Visual clarity
+
+```{r}
+# insert code here
+```
+
+## c. Aesthetic calrity
+
+\[insert written response here\]
+
+## d. Recommendations
 
