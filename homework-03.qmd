@@ -24,64 +24,44 @@ I could calculate the mean hours of productivity to compare between locations, s
 
 ## b. Visualization
 
+
 ```{r}
-list.files()
+
+personal_data <- read_csv("Personal_data_1.csv") #reading in data frame
+
 ```
 
+```{r  cleaning-data}  
 
-```{r cleaning-data}
-
-presonal_data <- read_csv("ENVS 193 DS - Personal Data - sheet1.numbers")
-  
-  
-  
-  
-  
-personal_data_clean <-  |> # use the production data frame
-  clean_names() |> # clean up column names
-  filter(entity == "United States") |> # filter to only include observations from the US
-  select(year, aquaculture_production_metric_tons, capture_fisheries_production_metric_tons) |> # select columns of interest 
-  pivot_longer(cols = aquaculture_production_metric_tons:capture_fisheries_production_metric_tons, # choose columns to pivot
-               names_to = "type", # name the column name with fishery type "type"
-               values_to = "catch_metric_tons") |> # name the column name with the catch amount "catch_metric_tons"
-  mutate(type = case_when( # mutate the existing type column
-    type == "aquaculture_production_metric_tons" ~ "aquaculture", # when "aquaculture_production_metric_tons" appears in the "type" column, fill in "aquaculture"
-    type == "capture_fisheries_production_metric_tons" ~ "capture" # when "capture_fisheries_production_metric_tons" appears in the "type" column, fill in "capture"
-  )) |> 
-  mutate(metric_tons_mil = catch_metric_tons/1000000) # convert catch in metric tons to millions
-
-
-
+personal_data_clean <- personal_data |>
+   clean_names() |>
+   filter(location %in% c("Home", "Library")) |> #filter to include only observations from home and library
+  select(hours_of_productivity_hh_mm, location) |> #selecting only the columns with data of interest
+  separate(hours_of_productivity_hh_mm, into = c("hrs", "mins"), sep = ":", convert = TRUE) |>
+  mutate(productivity_hours = hrs + mins / 60) #separating hours and minutes to calculate productivity in terms of hours
 
 ```
 
 
-```{r data-plot}
-# base layer: ggplot
-ggplot(data = production_clean,
-       aes(x = type, 
-           y = metric_tons_mil, 
-           color = type)) +
-  # first layer: adding data (each point shows an observation)
-  geom_jitter(width = 0.1,
-              height = 0,
-              alpha = 0.4,
-              shape = 21) +
-  # second layer: means and 95% CI
-  geom_pointrange(data = production_summary,
-                  aes(x = type, 
-                      y = mean, 
-                      ymin = mean - margin, 
-                      ymax = mean + margin)) +
-  # changing appearance: colors, labels, and theme
-  scale_color_manual(values = c("aquaculture" = "deeppink3",
-                                "capture" = "slateblue4")) +
-  labs(x = "Production type",
-       y = "Million metric tons of production",
-       color = "Production type",
-       title = "Capture produces more than aquaculture") +
-  theme_light()
+
+
+```{r}
+ggplot(data = personal_data_clean, #chossing data set
+       aes(x = location, 
+           y = productivity_hours, 
+           fill = location)) + #settinbg axis 
+  geom_boxplot() +
+  geom_jitter(height = 0, width = 0.2, alpha = 0.6) +
+  scale_fill_manual(values = c("Home" = "#008080", "Library" = "#800080")) + #choosing custom colors 
+  theme_minimal() +
+  labs(title = "Distribution of Productivity Hours by Location", #giving plot a title
+       x = "Location", y = "Productivity (hours)") + #labeling axis
+  theme(legend.position = "none")  #removing legend
+
+
 ```
+
+
 
 \[insert written response here\]
 
