@@ -115,12 +115,15 @@ An affective visualization of my personal data could be a calendar drawing where
 This figure depicts a scatter plot of total organic matter (TOM, %) against percent mud content across four habitat types present along the California Coast: sea grass, bare sediment, salt marsh, and pan. Each point along the graph represents an individual sediment sample, visually comparing TOM and grain size across habitats. A linear regression was used to test for a statistically significant relationship between TOM and grain size (% mud). The goal of this statistical analysis was to determine how sediment size influences accumulation of orgnic matter in different habitats along the California Coast. 
 
 
-## b. Visual clarity
+## b.
 
 Although the author made a clear description and analysis in the text, the figure itself doesn't provide a clear visual representation of the model results. The figure lacks a regression line, R^2 value, and p-value. The figures ability to convey the outcome of the linear regression is limited due to the lack of these elements.
 
-## c. Aesthetic calrity
+## c. 
 
-\[insert written response here\]
+This figure is ascetically clear; it is clean, easy to interpret, and straight forward. The data: ink ratio is high, the focus of the figure is to display individual data points and there are is no unnecessary visual clutter. The legend and shapes distinguishing habitat type aids in visual understanding without over complicating the figure. 
 
-## d. Recommendations
+## d. 
+
+To improve the figure, I recommend adding regression lines, and R^2 value, and p-values to clearly illustrate the significance and strength of relationships as described in the text. Without these visual elements the readers are forced to connect what they have read to the visualization instead of providing concise and informative figure. The author could even go further to include confidence intervals to demonstrate uncertainty. These added visual elements would allow the figure to standalone instead of relying on text to convey a summary of the data. 
+
