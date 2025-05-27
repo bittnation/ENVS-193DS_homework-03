@@ -58,7 +58,7 @@ ggplot(data = personal_data_clean, #choosing data set
 
 ```
 
-**Figure 1.** Boxplot showing the distribution of daily productivity hours by location. Each box represents the interquartile range (IQR) of productivity values, with the horizontal line indicating the median. Whiskers extend to values within 1.5 times the IQR, and individual points represent daily observations. Fill colors indicate study location: teal for Home (n = 7) and purple for Library (n = 8). Productivity hours were calculated by converting reported time values from HH:MM format to decimal hours.
+**Figure 1.** Box plot showing the distribution of daily productivity hours by location. Each box represents the interquartile range (IQR) of productivity values, with the horizontal line indicating the median. Whiskers extend to values within 1.5 times the IQR, and individual points represent daily observations. Fill colors indicate study location: teal for Home (n = 7) and purple for Library (n = 8). Productivity hours were calculated by converting reported time values from HH:MM format to decimal hours.
 
 ## d. Table Presentation
 
@@ -92,7 +92,7 @@ Table 1. Summary of productivity hours by location
 
 An affective visualization of my personal data could be a calendar drawing where each day includes a small symbolic drawing to represent the location (a house icon for Home and a stack of books for the Library). The background color of each day would reflect how productive I was, with bold or bright colors for days higher productivity and opaque colors for low productivity (brightness ranging from highest productivity being the brightest and lowest productivity being the dullest). Lines layered over the color would represent caffeine intake, with sharp or thick lines showing higher caffeine intake and faint, smooth lines showing less (no lines for no caffeine). This visualization wouldn’t focus on exact data values but would instead capture the feel of each day through visual elements that reflect data regarding mood, energy, and environment.
 
-## b. 
+## b.
 
 ![](images/problem-2-part-b.pdf)
 
@@ -108,11 +108,12 @@ An affective visualization of my personal data could be a calendar drawing where
 # insert any cleaning/wrangling code you need here
 ```
 
-## a. Revist and summerarize
+## a. 
 
-```{r}
-# insert code here
-```
+![](images/crituque-figure.png)
+
+This figure depicts a scatter plot of total organic matter (TOM, %) against percent mud content across four habitat types present along the California Coast: sea grass, bare sediment, salt marsh, and pan. Each point along the graph represents an individual sediment sample, visually comparing TOM and grain size across habitats. A linear regression was used to test for a statistically significant relationship between TOM and grain size (% mud). The goal of this statistical analysis was to determine how sediment size influences accumulation of orgnic matter in different habitats along the California Coast. 
+
 
 ## b. Visual clarity
 
