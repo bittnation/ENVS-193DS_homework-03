@@ -13,6 +13,7 @@ library(tidyverse)
 library(here)
 library(flextable)
 library(janitor)
+library(dplyr)
 
 ```
 
@@ -61,18 +62,34 @@ ggplot(data = personal_data_clean, #choosing data set
 ```
 
 
-## c. Caption
 
-Figure 1. Boxplot with jittered points showing the distribution of daily productivity hours at home and in the library. Time values were converted from HH:MM to decimal format to compare average productivity between locations. The figure highlights noticeable differences in productivity patterns depending on where studying takes place
-
+**Figure 1.** Boxplot showing the distribution of daily productivity hours by location. Each box represents the interquartile range (IQR) of productivity values, with the horizontal line indicating the median. Whiskers extend to values within 1.5 times the IQR, and individual points represent daily observations. Fill colors indicate study location: teal for Home (n = 7) and purple for Library (n = 8). Productivity hours were calculated by converting reported time values from HH:MM format to decimal hours.
 
 ## d. Table Presentation
 
-```{r}
-# insert code here
+```{r table}
+
+summary_table <- personal_data_clean |> #creating summary data set
+  group_by(location) |> #grouping all values by location: Library or home
+  summarise(
+    n = n(), #including sample size
+    mean_productivity = round(mean(productivity_hours, na.rm = TRUE), 1),#calculating mean hours of productivity and rounding to one decimal point
+    sd_productivity = round(sd(productivity_hours, na.rm = TRUE), 1) # calculating standard deviation in hours and rounding to one decimal point
+  )
+
+summary_table |> #putting calculated values into the format of a summary table
+  flextable() |>
+  set_header_labels( #labeling column headers
+    location = "Location",
+    n = "Sample Size (n)",
+    mean_productivity = "Mean Productivity (hours)",
+    sd_productivity = "SD (hours)"
+  ) |>
+  autofit() |> # cleaning table format
+  set_caption("Table 1. Summary of productivity hours by location.") #captioning summary table
 ```
 
-\[insert written response here\]
+Table 1. Summary of productivity hours by location
 
 # Problem 2. Affective Visualization
 

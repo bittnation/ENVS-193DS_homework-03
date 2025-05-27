@@ -68,6 +68,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="homework-03_files/libs/bootstrap/bootstrap.min.js"></script>
 <link href="homework-03_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="homework-03_files/libs/bootstrap/bootstrap-c0367b04c37547644fece4185067e4a7.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="homework-03_files/libs/tabwid-1.1.3/tabwid.css" rel="stylesheet">
+<script src="homework-03_files/libs/tabwid-1.1.3/tabwid.js"></script>
 
 
 </head>
@@ -140,7 +142,138 @@ The following objects are masked from 'package:stats':
 
     chisq.test, fisher.test</code></pre>
 </div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<section id="problem-1.-personal-data" class="level1">
+<h1>Problem 1. Personal Data</h1>
+<section id="a.-data-summarizing" class="level2">
+<h2 class="anchored" data-anchor-id="a.-data-summarizing">a. Data Summarizing</h2>
+<p>I could calculate the mean hours of productivity to compare between locations, such as home versus the library, because I suspect that my environment affects how focused I am. This comparison would help determine if studying in the library leads to longer or more productive work sessions than working at home.</p>
+</section>
+<section id="b.-visualization" class="level2">
+<h2 class="anchored" data-anchor-id="b.-visualization">b. Visualization</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>personal_data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"Personal_data_1.csv"</span>) <span class="co">#reading in data frame</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Rows: 20 Columns: 8
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr  (2): Location, Motivation
+dbl  (1): Caffeine Intake (mg)
+date (1): Date
+time (4): Start Time, End Time, Hours of Productivity (hh.mm), Hours of Slee...
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>personal_data_clean <span class="ot">&lt;-</span> personal_data <span class="sc">|&gt;</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>   <span class="fu">clean_names</span>() <span class="sc">|&gt;</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>   <span class="fu">filter</span>(location <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Home"</span>, <span class="st">"Library"</span>)) <span class="sc">|&gt;</span> <span class="co">#filter to include only observations from home and library</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(hours_of_productivity_hh_mm, location) <span class="sc">|&gt;</span> <span class="co">#selecting only the columns with data of interest</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">separate</span>(hours_of_productivity_hh_mm, <span class="at">into =</span> <span class="fu">c</span>(<span class="st">"hrs"</span>, <span class="st">"mins"</span>), <span class="at">sep =</span> <span class="st">":"</span>, <span class="at">convert =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">productivity_hours =</span> hrs <span class="sc">+</span> mins <span class="sc">/</span> <span class="dv">60</span>) <span class="co">#separating hours and minutes to calculate productivity in terms of hours</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Expected 2 pieces. Additional pieces discarded in 15 rows [1, 2, 3, 4, 5, 6, 7,
+8, 9, 10, 11, 12, 13, 14, 15].</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> personal_data_clean, <span class="co">#choosing data set</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> location, </span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>           <span class="at">y =</span> productivity_hours, </span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>           <span class="at">fill =</span> location)) <span class="sc">+</span> <span class="co">#setting axis </span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(<span class="at">height =</span> <span class="dv">0</span>, <span class="at">width =</span> <span class="fl">0.2</span>, <span class="at">alpha =</span> <span class="fl">0.6</span>) <span class="sc">+</span></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Home"</span> <span class="ot">=</span> <span class="st">"#008080"</span>, <span class="st">"Library"</span> <span class="ot">=</span> <span class="st">"#800080"</span>)) <span class="sc">+</span> <span class="co">#choosing custom colors </span></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Distribution of Productivity Hours by Location"</span>, <span class="co">#giving plot a title</span></span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Location"</span>, <span class="at">y =</span> <span class="st">"Productivity (hours)"</span>) <span class="sc">+</span> <span class="co">#labeling axis</span></span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>)  <span class="co">#removing legend</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="homework-03_files/figure-html/data-plot-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>Figure 1.</strong> Boxplot showing the distribution of daily productivity hours by location. Each box represents the interquartile range (IQR) of productivity values, with the horizontal line indicating the median. Whiskers extend to values within 1.5 times the IQR, and individual points represent daily observations. Fill colors indicate study location: teal for Home (n = 7) and purple for Library (n = 8). Productivity hours were calculated by converting reported time values from HH:MM format to decimal hours.</p>
+</section>
+<section id="d.-table-presentation" class="level2">
+<h2 class="anchored" data-anchor-id="d.-table-presentation">d.&nbsp;Table Presentation</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>summary_table <span class="ot">&lt;-</span> personal_data_clean <span class="sc">|&gt;</span> <span class="co">#creating summary data set</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(location) <span class="sc">|&gt;</span> <span class="co">#grouping all values by location: Library or home</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">n =</span> <span class="fu">n</span>(), <span class="co">#including sample size</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean_productivity =</span> <span class="fu">round</span>(<span class="fu">mean</span>(productivity_hours, <span class="at">na.rm =</span> <span class="cn">TRUE</span>), <span class="dv">1</span>),<span class="co">#calculating mean hours of productivity and rounding to one decimal point</span></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">sd_productivity =</span> <span class="fu">round</span>(<span class="fu">sd</span>(productivity_hours, <span class="at">na.rm =</span> <span class="cn">TRUE</span>), <span class="dv">1</span>) <span class="co"># calculating standard deviation in hours and rounding to one decimal point</span></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>summary_table <span class="sc">|&gt;</span> <span class="co">#putting calculated values into the format of a summary table</span></span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">flextable</span>() <span class="sc">|&gt;</span></span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_header_labels</span>( <span class="co">#labeling column headers</span></span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">location =</span> <span class="st">"Location"</span>,</span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">n =</span> <span class="st">"Sample Size (n)"</span>,</span>
+<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean_productivity =</span> <span class="st">"Mean Productivity (hours)"</span>,</span>
+<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">sd_productivity =</span> <span class="st">"SD (hours)"</span></span>
+<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a>  ) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="tabwid"><style>.cl-9ad40d72{}.cl-9ad15cbc{font-family:'Helvetica';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-9ad27868{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-9ad27869{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-9ad283bc{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-9ad283bd{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-9ad283c6{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-9ad283c7{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-9ad283c8{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-9ad283c9{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table data-quarto-disable-processing="true" class="cl-9ad40d72"><thead><tr style="overflow-wrap:break-word;"><th class="cl-9ad283bc"><p class="cl-9ad27868"><span class="cl-9ad15cbc">Location</span></p></th><th class="cl-9ad283bd"><p class="cl-9ad27869"><span class="cl-9ad15cbc">Sample Size (n)</span></p></th><th class="cl-9ad283bd"><p class="cl-9ad27869"><span class="cl-9ad15cbc">Mean Productivity (hours)</span></p></th><th class="cl-9ad283bd"><p class="cl-9ad27869"><span class="cl-9ad15cbc">SD (hours)</span></p></th></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td class="cl-9ad283c6"><p class="cl-9ad27868"><span class="cl-9ad15cbc">Home</span></p></td><td class="cl-9ad283c7"><p class="cl-9ad27869"><span class="cl-9ad15cbc">9</span></p></td><td class="cl-9ad283c7"><p class="cl-9ad27869"><span class="cl-9ad15cbc">2.5</span></p></td><td class="cl-9ad283c7"><p class="cl-9ad27869"><span class="cl-9ad15cbc">1.6</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-9ad283c8"><p class="cl-9ad27868"><span class="cl-9ad15cbc">Library</span></p></td><td class="cl-9ad283c9"><p class="cl-9ad27869"><span class="cl-9ad15cbc">6</span></p></td><td class="cl-9ad283c9"><p class="cl-9ad27869"><span class="cl-9ad15cbc">7.4</span></p></td><td class="cl-9ad283c9"><p class="cl-9ad27869"><span class="cl-9ad15cbc">2.1</span></p></td></tr></tbody></table></div>
+</div>
+</div>
+<p>Table 1. Summary of productivity hours by location</p>
+</section>
+</section>
+<section id="problem-2.-affective-visualization" class="level1">
+<h1>Problem 2. Affective Visualization</h1>
+<section id="a.-describe-affective-visualization" class="level2">
+<h2 class="anchored" data-anchor-id="a.-describe-affective-visualization">a. describe affective visualization</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># insert code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="b.-sketch" class="level2">
+<h2 class="anchored" data-anchor-id="b.-sketch">b. sketch</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># insert code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="c.-visualization-draft" class="level2">
+<h2 class="anchored" data-anchor-id="c.-visualization-draft">c.&nbsp;visualization draft</h2>
+<p>[insert written response here]</p>
+</section>
+<section id="d.-artist-statement" class="level2">
+<h2 class="anchored" data-anchor-id="d.-artist-statement">d.&nbsp;artist statement</h2>
+</section>
+</section>
+<section id="problem-3.-statistical-critique" class="level1">
+<h1>Problem 3. Statistical Critique</h1>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># insert any cleaning/wrangling code you need here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="a.-revist-and-summerarize" class="level2">
+<h2 class="anchored" data-anchor-id="a.-revist-and-summerarize">a. Revist and summerarize</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># insert code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="b.-visual-clarity" class="level2">
+<h2 class="anchored" data-anchor-id="b.-visual-clarity">b. Visual clarity</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># insert code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="c.-aesthetic-calrity" class="level2">
+<h2 class="anchored" data-anchor-id="c.-aesthetic-calrity">c.&nbsp;Aesthetic calrity</h2>
+<p>[insert written response here]</p>
+</section>
+<section id="d.-recommendations" class="level2">
+<h2 class="anchored" data-anchor-id="d.-recommendations">d.&nbsp;Recommendations</h2>
+</section>
+</section>
 
 </main>
 <!-- /main column -->
