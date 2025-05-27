@@ -93,11 +93,9 @@ Table 1. Summary of productivity hours by location
 
 # Problem 2. Affective Visualization
 
-## a. describe affective visualization
+## a. 
 
-```{r}
-# insert code here
-```
+An effective visualization of my personal data could be a calendar drawing where each day includes a small symbolic drawing to represent the location (a house icon for Home and a stack of books for the Library). The background color of each day would reflect how productive I was, with bold or bright colors for days higher productivity and opaque colors for low productivity (brightness ranging from highest productivity being the brightest and lowest productivity being the dullest). Lines layered over the color would represent caffeine intake, with sharp or thick lines showing higher caffeine intake and faint, smooth lines showing less (no lines for no caffeine). This visualization wouldn’t focus on exact data values but would instead capture the feel of each day through visual elements that reflect data regarding mood, energy, and environment.
 
 ## b. sketch
 
