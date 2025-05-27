@@ -90,7 +90,7 @@ Table 1. Summary of productivity hours by location
 
 ## a.
 
-An affective visualization of my personal data could be a calendar drawing where each day includes a small symbolic drawing to represent the location (a house icon for Home and a stack of books for the Library). The background color of each day would reflect how productive I was, with bold or bright colors for days higher productivity and opaque colors for low productivity (brightness ranging from highest productivity being the brightest and lowest productivity being the dullest). Lines layered over the color would represent caffeine intake, with sharp or thick lines showing higher caffeine intake and faint, smooth lines showing less (no lines for no caffeine). This visualization wouldn’t focus on exact data values but would instead capture the feel of each day through visual elements that reflect data regarding mood, energy, and environment.
+An affective visualization of my personal data could be a calendar drawing where each day includes a small symbolic drawing to represent the location (a house icon for home and a stack of books for the library). The background color of each day would reflect how productive I was, with bold or bright colors for days higher productivity and opaque colors for low productivity (brightness ranging from highest productivity being the brightest and lowest productivity being the dullest). Lines layered over the color would represent caffeine intake, with sharp or thick lines showing higher caffeine intake and faint, smooth lines showing less (no lines for no caffeine). This visualization wouldn’t focus on exact data values but would instead capture the feel of each day through visual elements that reflect data regarding mood, energy, and environment.
 
 ## b.
 
@@ -117,9 +117,7 @@ This figure depicts a scatter plot of total organic matter (TOM, %) against perc
 
 ## b. Visual clarity
 
-```{r}
-# insert code here
-```
+Although the author made a clear description and analysis in the text, the figure itself doesn't provide a clear visual representation of the model results. The figure lacks a regression line, R^2 value, and p-value. The figures ability to convey the outcome of the linear regression is limited due to the lack of these elements.
 
 ## c. Aesthetic calrity
 
