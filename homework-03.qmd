@@ -25,14 +25,13 @@ I could calculate the mean hours of productivity to compare between locations, s
 
 ## b. Visualization
 
-
 ```{r}
 
 personal_data <- read_csv("Personal_data_1.csv") #reading in data frame
 
 ```
 
-```{r  cleaning-data}  
+```{r  cleaning-data}
 
 personal_data_clean <- personal_data |>
    clean_names() |>
@@ -42,8 +41,6 @@ personal_data_clean <- personal_data |>
   mutate(productivity_hours = hrs + mins / 60) #separating hours and minutes to calculate productivity in terms of hours
 
 ```
-
-
 
 ```{r data-plot}
 ggplot(data = personal_data_clean, #choosing data set
@@ -60,8 +57,6 @@ ggplot(data = personal_data_clean, #choosing data set
 
 
 ```
-
-
 
 **Figure 1.** Boxplot showing the distribution of daily productivity hours by location. Each box represents the interquartile range (IQR) of productivity values, with the horizontal line indicating the median. Whiskers extend to values within 1.5 times the IQR, and individual points represent daily observations. Fill colors indicate study location: teal for Home (n = 7) and purple for Library (n = 8). Productivity hours were calculated by converting reported time values from HH:MM format to decimal hours.
 
@@ -93,15 +88,13 @@ Table 1. Summary of productivity hours by location
 
 # Problem 2. Affective Visualization
 
-## a. 
+## a.
 
-An effective visualization of my personal data could be a calendar drawing where each day includes a small symbolic drawing to represent the location (a house icon for Home and a stack of books for the Library). The background color of each day would reflect how productive I was, with bold or bright colors for days higher productivity and opaque colors for low productivity (brightness ranging from highest productivity being the brightest and lowest productivity being the dullest). Lines layered over the color would represent caffeine intake, with sharp or thick lines showing higher caffeine intake and faint, smooth lines showing less (no lines for no caffeine). This visualization wouldn’t focus on exact data values but would instead capture the feel of each day through visual elements that reflect data regarding mood, energy, and environment.
+An affective visualization of my personal data could be a calendar drawing where each day includes a small symbolic drawing to represent the location (a house icon for Home and a stack of books for the Library). The background color of each day would reflect how productive I was, with bold or bright colors for days higher productivity and opaque colors for low productivity (brightness ranging from highest productivity being the brightest and lowest productivity being the dullest). Lines layered over the color would represent caffeine intake, with sharp or thick lines showing higher caffeine intake and faint, smooth lines showing less (no lines for no caffeine). This visualization wouldn’t focus on exact data values but would instead capture the feel of each day through visual elements that reflect data regarding mood, energy, and environment.
 
-## b. sketch
+## b. 
 
-```{r}
-# insert code here
-```
+![](images/problem-2-part-b.pdf)
 
 ## c. visualization draft
 
@@ -109,8 +102,7 @@ An effective visualization of my personal data could be a calendar drawing where
 
 ## d. artist statement
 
-
-# Problem 3. Statistical Critique 
+# Problem 3. Statistical Critique
 
 ```{r}
 # insert any cleaning/wrangling code you need here
@@ -133,4 +125,3 @@ An effective visualization of my personal data could be a calendar drawing where
 \[insert written response here\]
 
 ## d. Recommendations
-
