@@ -29,16 +29,19 @@ library(dplyr)       # for data manipulation
 ## Data and file information
 
 .
-├── .gitignore                         # Git config file to ignore unnecessary files
-├── ENVS 193 DS – Personal Data...     # Original spreadsheet from Numbers/Excel
-├── ENVS-193DS_homework=03.Rproj       # RStudio project file
-├── homework-03.qmd                    # Quarto file containing analysis and visualization code
-├── homework-03.html                   # Rendered HTML output from .qmd
-├── homework-03_files/                 # Supporting files automatically created during rendering
-├── images/                            # Folder for visualization screenshots or affective artwork
-├── Personal_data_1.csv                # Cleaned CSV version of personal data
-└── README.md                          # Project overview and documentation
+├── ENVS-193DS_homework=03.Rproj         # RStudio project file
+├── README.md                            
+├── code/                                # Code folder
+│   ├── homework-03.qmd                  # Quarto file with analysis and narrative
+│   └── homework-03.html                 # Rendered HTML output
+├── data/                                # Data folder
+│   └── personal_data_1.csv              # personal data set
+├── images/                              # Images folder
+│   ├── DS Visualization.png             # visualization
+│   ├── critique-figure.png              # figure I critiqued
+│   └── IMG_1025.jpeg                    # visualization draft
 
+  
 ---
 
 ## Rendered output
