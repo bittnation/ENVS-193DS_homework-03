@@ -2,6 +2,7 @@
 ---
 title: "Homework 3"
 author: "Rachel Bittner"
+Date: "05-28-2025"
 format:
   html:
     toc: true
