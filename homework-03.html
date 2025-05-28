@@ -74,10 +74,41 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </head>
 
-<body class="fullcontent">
+<body>
 
-<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
-
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article toc-left">
+<div id="quarto-sidebar-toc-left" class="sidebar toc-left">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#set-up" id="toc-set-up" class="nav-link active" data-scroll-target="#set-up"><span class="header-section-number">1</span> Set up</a></li>
+  <li><a href="#problem-1.-personal-data" id="toc-problem-1.-personal-data" class="nav-link" data-scroll-target="#problem-1.-personal-data"><span class="header-section-number">2</span> Problem 1. Personal Data</a>
+  <ul class="collapse">
+  <li><a href="#data-summarizing" id="toc-data-summarizing" class="nav-link" data-scroll-target="#data-summarizing"><span class="header-section-number">2.1</span> Data Summarizing</a></li>
+  <li><a href="#cleaning-data" id="toc-cleaning-data" class="nav-link" data-scroll-target="#cleaning-data"><span class="header-section-number">2.2</span> Cleaning Data</a></li>
+  <li><a href="#data-visulaization" id="toc-data-visulaization" class="nav-link" data-scroll-target="#data-visulaization"><span class="header-section-number">2.3</span> Data Visulaization</a></li>
+  <li><a href="#table-presentation" id="toc-table-presentation" class="nav-link" data-scroll-target="#table-presentation"><span class="header-section-number">2.4</span> Table presentation</a></li>
+  </ul></li>
+  <li><a href="#problem-2.-affective-visualization" id="toc-problem-2.-affective-visualization" class="nav-link" data-scroll-target="#problem-2.-affective-visualization"><span class="header-section-number">3</span> Problem 2. Affective Visualization</a>
+  <ul class="collapse">
+  <li><a href="#description" id="toc-description" class="nav-link" data-scroll-target="#description"><span class="header-section-number">3.1</span> Description</a></li>
+  <li><a href="#visulaization-sketch" id="toc-visulaization-sketch" class="nav-link" data-scroll-target="#visulaization-sketch"><span class="header-section-number">3.2</span> Visulaization sketch</a></li>
+  <li><a href="#visulaization-draft" id="toc-visulaization-draft" class="nav-link" data-scroll-target="#visulaization-draft"><span class="header-section-number">3.3</span> Visulaization Draft</a></li>
+  <li><a href="#artist-statement" id="toc-artist-statement" class="nav-link" data-scroll-target="#artist-statement"><span class="header-section-number">3.4</span> Artist Statement</a></li>
+  </ul></li>
+  <li><a href="#problem-3.-statistical-critique" id="toc-problem-3.-statistical-critique" class="nav-link" data-scroll-target="#problem-3.-statistical-critique"><span class="header-section-number">4</span> Problem 3. Statistical Critique</a>
+  <ul class="collapse">
+  <li><a href="#figure-summary" id="toc-figure-summary" class="nav-link" data-scroll-target="#figure-summary"><span class="header-section-number">4.1</span> Figure + Summary</a></li>
+  <li><a href="#visual-clarity-analysis" id="toc-visual-clarity-analysis" class="nav-link" data-scroll-target="#visual-clarity-analysis"><span class="header-section-number">4.2</span> Visual clarity analysis</a></li>
+  <li><a href="#aesthetic-clarity-analysis" id="toc-aesthetic-clarity-analysis" class="nav-link" data-scroll-target="#aesthetic-clarity-analysis"><span class="header-section-number">4.3</span> Aesthetic clarity analysis</a></li>
+  <li><a href="#recommendations" id="toc-recommendations" class="nav-link" data-scroll-target="#recommendations"><span class="header-section-number">4.4</span> Recommendations</a></li>
+  </ul></li>
+  </ul>
+</nav>
+</div>
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+</div>
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
@@ -106,6 +137,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <p>GitHub Repository: https://github.com/bittnation/ENVS-193DS_homework-03.git</p>
+<section id="set-up" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Set up</h1>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(here)</span>
@@ -113,14 +146,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(janitor)</span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<section id="problem-1.-personal-data" class="level1">
-<h1>Problem 1. Personal Data</h1>
-<section id="a." class="level2">
-<h2 class="anchored" data-anchor-id="a.">a.</h2>
+</section>
+<section id="problem-1.-personal-data" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Problem 1. Personal Data</h1>
+<section id="data-summarizing" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="data-summarizing"><span class="header-section-number">2.1</span> Data Summarizing</h2>
 <p>I could calculate the mean hours of productivity to compare between locations, such as home versus the library, because I suspect that my environment affects how focused I am. This comparison would help determine if studying in the library leads to longer or more productive work sessions than working at home.</p>
 </section>
-<section id="b." class="level2">
-<h2 class="anchored" data-anchor-id="b.">b.</h2>
+<section id="cleaning-data" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="cleaning-data"><span class="header-section-number">2.2</span> Cleaning Data</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>personal_data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"Personal_data_1.csv"</span>) <span class="co">#reading in data frame</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -132,6 +166,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">separate</span>(hours_of_productivity_hh_mm, <span class="at">into =</span> <span class="fu">c</span>(<span class="st">"hrs"</span>, <span class="st">"mins"</span>), <span class="at">sep =</span> <span class="st">":"</span>, <span class="at">convert =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span></span>
 <span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">productivity_hours =</span> hrs <span class="sc">+</span> mins <span class="sc">/</span> <span class="dv">60</span>) <span class="co">#separating hours and minutes to calculate productivity in terms of hours</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</section>
+<section id="data-visulaization" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="data-visulaization"><span class="header-section-number">2.3</span> Data Visulaization</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> personal_data_clean, <span class="co">#choosing data set</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> location, </span>
@@ -154,8 +191,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p><strong>Figure 1.</strong> Box plot showing the distribution of daily productivity hours by location. Each box represents the interquartile range (IQR) of productivity values, with the horizontal line indicating the median. Whiskers extend to values within 1.5 times the IQR, and individual points represent daily observations. Fill colors indicate study location: teal for Home (n = 7) and purple for Library (n = 8). Productivity hours were calculated by converting reported time values from HH:MM format to decimal hours.</p>
 </section>
-<section id="d." class="level2">
-<h2 class="anchored" data-anchor-id="d.">d.</h2>
+<section id="table-presentation" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="table-presentation"><span class="header-section-number">2.4</span> Table presentation</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>summary_table <span class="ot">&lt;-</span> personal_data_clean <span class="sc">|&gt;</span> <span class="co">#creating summary data set</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(location) <span class="sc">|&gt;</span> <span class="co">#grouping all values by location: Library or home</span></span>
@@ -176,48 +213,48 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">autofit</span>() <span class="sc">|&gt;</span> <span class="co"># cleaning table format</span></span>
 <span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_caption</span>(<span class="st">"Table 1. Summary of productivity hours by location."</span>) <span class="co">#captioning summary table</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div class="tabwid"><style>.cl-f6d58cd2{}.cl-f6d2d60e{font-family:'Helvetica';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-f6d3f00c{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-f6d3f016{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-f6d3fba6{width:0.863in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f6d3fbb0{width:1.372in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f6d3fbb1{width:2.026in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f6d3fbb2{width:1.024in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f6d3fbba{width:0.863in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f6d3fbbb{width:1.372in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f6d3fbbc{width:2.026in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f6d3fbbd{width:1.024in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f6d3fbc4{width:0.863in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f6d3fbc5{width:1.372in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f6d3fbc6{width:2.026in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f6d3fbc7{width:1.024in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table data-quarto-disable-processing="true" class="cl-f6d58cd2"><thead><tr style="overflow-wrap:break-word;"><th class="cl-f6d3fba6"><p class="cl-f6d3f00c"><span class="cl-f6d2d60e">Location</span></p></th><th class="cl-f6d3fbb0"><p class="cl-f6d3f016"><span class="cl-f6d2d60e">Sample Size (n)</span></p></th><th class="cl-f6d3fbb1"><p class="cl-f6d3f016"><span class="cl-f6d2d60e">Mean Productivity (hours)</span></p></th><th class="cl-f6d3fbb2"><p class="cl-f6d3f016"><span class="cl-f6d2d60e">SD (hours)</span></p></th></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td class="cl-f6d3fbba"><p class="cl-f6d3f00c"><span class="cl-f6d2d60e">Home</span></p></td><td class="cl-f6d3fbbb"><p class="cl-f6d3f016"><span class="cl-f6d2d60e">9</span></p></td><td class="cl-f6d3fbbc"><p class="cl-f6d3f016"><span class="cl-f6d2d60e">2.5</span></p></td><td class="cl-f6d3fbbd"><p class="cl-f6d3f016"><span class="cl-f6d2d60e">1.6</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-f6d3fbc4"><p class="cl-f6d3f00c"><span class="cl-f6d2d60e">Library</span></p></td><td class="cl-f6d3fbc5"><p class="cl-f6d3f016"><span class="cl-f6d2d60e">6</span></p></td><td class="cl-f6d3fbc6"><p class="cl-f6d3f016"><span class="cl-f6d2d60e">7.4</span></p></td><td class="cl-f6d3fbc7"><p class="cl-f6d3f016"><span class="cl-f6d2d60e">2.1</span></p></td></tr></tbody></table></div>
+<div class="tabwid"><style>.cl-b4708674{}.cl-b46dce16{font-family:'Helvetica';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-b46ee990{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-b46ee991{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-b46ef534{width:0.863in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b46ef53e{width:1.372in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b46ef53f{width:2.026in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b46ef548{width:1.024in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b46ef549{width:0.863in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b46ef54a{width:1.372in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b46ef54b{width:2.026in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b46ef552{width:1.024in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b46ef553{width:0.863in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b46ef554{width:1.372in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b46ef555{width:2.026in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b46ef556{width:1.024in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table data-quarto-disable-processing="true" class="cl-b4708674"><thead><tr style="overflow-wrap:break-word;"><th class="cl-b46ef534"><p class="cl-b46ee990"><span class="cl-b46dce16">Location</span></p></th><th class="cl-b46ef53e"><p class="cl-b46ee991"><span class="cl-b46dce16">Sample Size (n)</span></p></th><th class="cl-b46ef53f"><p class="cl-b46ee991"><span class="cl-b46dce16">Mean Productivity (hours)</span></p></th><th class="cl-b46ef548"><p class="cl-b46ee991"><span class="cl-b46dce16">SD (hours)</span></p></th></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td class="cl-b46ef549"><p class="cl-b46ee990"><span class="cl-b46dce16">Home</span></p></td><td class="cl-b46ef54a"><p class="cl-b46ee991"><span class="cl-b46dce16">9</span></p></td><td class="cl-b46ef54b"><p class="cl-b46ee991"><span class="cl-b46dce16">2.5</span></p></td><td class="cl-b46ef552"><p class="cl-b46ee991"><span class="cl-b46dce16">1.6</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-b46ef553"><p class="cl-b46ee990"><span class="cl-b46dce16">Library</span></p></td><td class="cl-b46ef554"><p class="cl-b46ee991"><span class="cl-b46dce16">6</span></p></td><td class="cl-b46ef555"><p class="cl-b46ee991"><span class="cl-b46dce16">7.4</span></p></td><td class="cl-b46ef556"><p class="cl-b46ee991"><span class="cl-b46dce16">2.1</span></p></td></tr></tbody></table></div>
 </div>
 </div>
 <p>Table 1. Summary of productivity hours by location</p>
 </section>
 </section>
-<section id="problem-2.-affective-visualization" class="level1">
-<h1>Problem 2. Affective Visualization</h1>
-<section id="a.-1" class="level2">
-<h2 class="anchored" data-anchor-id="a.-1">a.</h2>
+<section id="problem-2.-affective-visualization" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Problem 2. Affective Visualization</h1>
+<section id="description" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="description"><span class="header-section-number">3.1</span> Description</h2>
 <p>My personal data affective visualization could be a strip based piece of art where each day is represented by a rectangle of various colors and sizes. The length of the strip would be representative of total hours of productivity, the longer the strip the more hours. The color of the strip would be representative of caffeine intake, darker colors indicate a higher caffeine intake and lighter colors indicate a lower caffeine intake. I would use a coffee inspired color palate to create an aesthetic connection to the data.</p>
 </section>
-<section id="b.-1" class="level2">
-<h2 class="anchored" data-anchor-id="b.-1">b.</h2>
+<section id="visulaization-sketch" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="visulaization-sketch"><span class="header-section-number">3.2</span> Visulaization sketch</h2>
 <p><img src="images/IMG_1025.jpeg" class="img-fluid"></p>
 </section>
-<section id="c." class="level2">
-<h2 class="anchored" data-anchor-id="c.">c.</h2>
+<section id="visulaization-draft" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="visulaization-draft"><span class="header-section-number">3.3</span> Visulaization Draft</h2>
 <p><img src="images/193%20DS%20Visualization.png" class="img-fluid"></p>
 </section>
-<section id="d.-1" class="level2">
-<h2 class="anchored" data-anchor-id="d.-1">d.</h2>
+<section id="artist-statement" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="artist-statement"><span class="header-section-number">3.4</span> Artist Statement</h2>
 <p>This piece visualizes my daily productivity and caffeine intake over several weeks. The height of each strip represents how many hours I was productive that day, while the color intensity shows my caffeine intake. Icons indicate the location where I worked (home, library, lab, or other). I was inspired by Ed Hawkins’ climate stripes for their simplicity and emotional impact, and by Stefanie Posavec and Giorgia Lupi’s Dear Data project for using design to express personal routines. The final form piece is digital created using Canva. The overall process started with daily data collection of caffeine consumption, hours of productivity, date, and location. I used hours of productivity to calculate the length of each strip, Canva icons and text to provide context of date and location from each observation, and finally I assigned 5 different coffee inspired shades to 5 different ranges of caffeine intake (in mg) to assign a color to each observation. Each row contains 9 observations with different lengths creating an interesting and non-uniform pattern.</p>
 </section>
 </section>
-<section id="problem-3.-statistical-critique" class="level1">
-<h1>Problem 3. Statistical Critique</h1>
-<section id="a.-2" class="level2">
-<h2 class="anchored" data-anchor-id="a.-2">a.</h2>
+<section id="problem-3.-statistical-critique" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Problem 3. Statistical Critique</h1>
+<section id="figure-summary" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="figure-summary"><span class="header-section-number">4.1</span> Figure + Summary</h2>
 <p><img src="images/crituque-figure.png" class="img-fluid"></p>
 <p>This figure depicts a scatter plot of total organic matter (TOM, %) against percent mud content across four habitat types present along the California Coast: sea grass, bare sediment, salt marsh, and pan. Each point along the graph represents an individual sediment sample, visually comparing TOM and grain size across habitats. A linear regression was used to test for a statistically significant relationship between TOM and grain size (% mud). The goal of this statistical analysis was to determine how sediment size influences accumulation of organic matter in different habitats along the California Coast.</p>
 </section>
-<section id="b.-2" class="level2">
-<h2 class="anchored" data-anchor-id="b.-2">b.</h2>
+<section id="visual-clarity-analysis" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="visual-clarity-analysis"><span class="header-section-number">4.2</span> Visual clarity analysis</h2>
 <p>Although the author made a clear description and analysis in the text, the figure itself doesn’t provide a clear visual representation of the model results. The figure lacks a regression line, R^2 value, and p-value. The figures ability to convey the outcome of the linear regression is limited due to the lack of these elements.</p>
 </section>
-<section id="c.-1" class="level2">
-<h2 class="anchored" data-anchor-id="c.-1">c.</h2>
+<section id="aesthetic-clarity-analysis" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="aesthetic-clarity-analysis"><span class="header-section-number">4.3</span> Aesthetic clarity analysis</h2>
 <p>This figure is ascetically clear; it is clean, easy to interpret, and straight forward. The data: ink ratio is high, the focus of the figure is to display individual data points and there are is no unnecessary visual clutter. The legend and shapes distinguishing habitat type aids in visual understanding without over complicating the figure.</p>
 </section>
-<section id="d.-2" class="level2">
-<h2 class="anchored" data-anchor-id="d.-2">d.</h2>
+<section id="recommendations" class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="recommendations"><span class="header-section-number">4.4</span> Recommendations</h2>
 <p>To improve the figure, I recommend adding regression lines, and R^2 value, and p-values to clearly illustrate the significance and strength of relationships as described in the text. Without these visual elements the readers are forced to connect what they have read to the visualization instead of providing concise and informative figure. The author could even go further to include confidence intervals to demonstrate uncertainty. These added visual elements would allow the figure to standalone instead of relying on text to convey a summary of the data.</p>
 </section>
 </section>
