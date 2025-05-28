@@ -19,11 +19,11 @@ library(dplyr)
 
 # Problem 1. Personal Data
 
-## a. Data Summarizing
+## a.
 
 I could calculate the mean hours of productivity to compare between locations, such as home versus the library, because I suspect that my environment affects how focused I am. This comparison would help determine if studying in the library leads to longer or more productive work sessions than working at home.
 
-## b. Visualization
+## b.
 
 ```{r message=FALSE}
 
@@ -60,7 +60,7 @@ ggplot(data = personal_data_clean, #choosing data set
 
 **Figure 1.** Box plot showing the distribution of daily productivity hours by location. Each box represents the interquartile range (IQR) of productivity values, with the horizontal line indicating the median. Whiskers extend to values within 1.5 times the IQR, and individual points represent daily observations. Fill colors indicate study location: teal for Home (n = 7) and purple for Library (n = 8). Productivity hours were calculated by converting reported time values from HH:MM format to decimal hours.
 
-## d. Table Presentation
+## d.
 
 ```{r table}
 
@@ -96,20 +96,15 @@ My personal data affective visualization could be a strip based piece of art whe
 
 ![](images/IMG_1025.jpeg)
 
-## c. 
+## c.
 
-![](images/Screenshot%202025-05-28%20at%201.25.37%20PM.png)
+![](images/193 DS Visualization.png)
 
-## d. 
+## d.
 
-This piece visualizes my daily productivity and caffeine intake over several weeks. The height of each strip represents how many hours I was productive that day, while the color intensity shows my caffeine intake. Icons indicate the location where I worked (home, library, lab, or other). I was inspired by Ed Hawkins’ climate stripes for their simplicity and emotional impact, and by Stefanie Posavec and Giorgia Lupi’s Dear Data project for using design to express personal routines. The final form piece is digital created using Canva. The overall process started with daily data collection of caffeine consumption, hours of productivity, date, and location. I used hours of productivity to calculate the length of each strip, Canva icons and text to provide context of date and location from each observation, and finally I assigned 5 different coffee inspired shades to 5 different ranges of caffeine intake (in mg) to assign a color to each observation. Each row contains 9 observations with different lengths creating an interesting and non-uniform pattern. 
-
+This piece visualizes my daily productivity and caffeine intake over several weeks. The height of each strip represents how many hours I was productive that day, while the color intensity shows my caffeine intake. Icons indicate the location where I worked (home, library, lab, or other). I was inspired by Ed Hawkins’ climate stripes for their simplicity and emotional impact, and by Stefanie Posavec and Giorgia Lupi’s Dear Data project for using design to express personal routines. The final form piece is digital created using Canva. The overall process started with daily data collection of caffeine consumption, hours of productivity, date, and location. I used hours of productivity to calculate the length of each strip, Canva icons and text to provide context of date and location from each observation, and finally I assigned 5 different coffee inspired shades to 5 different ranges of caffeine intake (in mg) to assign a color to each observation. Each row contains 9 observations with different lengths creating an interesting and non-uniform pattern.
 
 # Problem 3. Statistical Critique
-
-```{r}
-# insert any cleaning/wrangling code you need here
-```
 
 ## a.
 
