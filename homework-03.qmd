@@ -96,11 +96,14 @@ My personal data affective visualization could be a strip based piece of art whe
 
 ![](images/IMG_1025.jpeg)
 
-## c. visualization draft
+## c. 
 
 ![](images/Screenshot%202025-05-28%20at%201.25.37%20PM.png)
 
-## d. artist statement
+## d. 
+
+This piece visualizes my daily productivity and caffeine intake over several weeks. The height of each strip represents how many hours I was productive that day, while the color intensity shows my caffeine intake. Icons indicate the location where I worked (home, library, lab, or other). I was inspired by Ed Hawkins’ climate stripes for their simplicity and emotional impact, and by Stefanie Posavec and Giorgia Lupi’s Dear Data project for using design to express personal routines. The final form piece is digital created using Canva. The overall process started with daily data collection of caffeine consumption, hours of productivity, date, and location. I used hours of productivity to calculate the length of each strip, Canva icons and text to provide context of date and location from each observation, and finally I assigned 5 different coffee inspired shades to 5 different ranges of caffeine intake (in mg) to assign a color to each observation. Each row contains 9 observations with different lengths creating an interesting and non-uniform pattern. 
+
 
 # Problem 3. Statistical Critique
 
