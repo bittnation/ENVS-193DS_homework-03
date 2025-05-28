@@ -90,15 +90,15 @@ Table 1. Summary of productivity hours by location
 
 ## a.
 
-An affective visualization of my personal data could be a calendar drawing where each day includes a small symbolic drawing to represent the location (a house icon for home and a stack of books for the library). The background color of each day would reflect how productive I was, with bold or bright colors for days higher productivity and opaque colors for low productivity (brightness ranging from highest productivity being the brightest and lowest productivity being the dullest). Lines layered over the color would represent caffeine intake, with sharp or thick lines showing higher caffeine intake and faint, smooth lines showing less (no lines for no caffeine). This visualization wouldn’t focus on exact data values but would instead capture the feel of each day through visual elements that reflect data regarding mood, energy, and environment.
+My personal data affective visualization could be a strip based piece of art where each day is represented by a rectangle of various colors and sizes. The length of the strip would be representative of total hours of productivity, the longer the strip the more hours. The color of the strip would be representative of caffeine intake, darker colors indicate a higher caffeine intake and lighter colors indicate a lower caffeine intake. I would use a coffee inspired color palate to create an aesthetic connection to the data.
 
 ## b.
 
-![](images/problem-2-part-b.pdf)
+![](images/IMG_1025.jpeg)
 
 ## c. visualization draft
 
-\[insert written response here\]
+![](images/Screenshot 2025-05-28 at 1.25.37 PM.png)
 
 ## d. artist statement
 
@@ -108,22 +108,20 @@ An affective visualization of my personal data could be a calendar drawing where
 # insert any cleaning/wrangling code you need here
 ```
 
-## a. 
+## a.
 
 ![](images/crituque-figure.png)
 
-This figure depicts a scatter plot of total organic matter (TOM, %) against percent mud content across four habitat types present along the California Coast: sea grass, bare sediment, salt marsh, and pan. Each point along the graph represents an individual sediment sample, visually comparing TOM and grain size across habitats. A linear regression was used to test for a statistically significant relationship between TOM and grain size (% mud). The goal of this statistical analysis was to determine how sediment size influences accumulation of orgnic matter in different habitats along the California Coast. 
-
+This figure depicts a scatter plot of total organic matter (TOM, %) against percent mud content across four habitat types present along the California Coast: sea grass, bare sediment, salt marsh, and pan. Each point along the graph represents an individual sediment sample, visually comparing TOM and grain size across habitats. A linear regression was used to test for a statistically significant relationship between TOM and grain size (% mud). The goal of this statistical analysis was to determine how sediment size influences accumulation of organic matter in different habitats along the California Coast.
 
 ## b.
 
-Although the author made a clear description and analysis in the text, the figure itself doesn't provide a clear visual representation of the model results. The figure lacks a regression line, R^2 value, and p-value. The figures ability to convey the outcome of the linear regression is limited due to the lack of these elements.
+Although the author made a clear description and analysis in the text, the figure itself doesn't provide a clear visual representation of the model results. The figure lacks a regression line, R\^2 value, and p-value. The figures ability to convey the outcome of the linear regression is limited due to the lack of these elements.
 
-## c. 
+## c.
 
-This figure is ascetically clear; it is clean, easy to interpret, and straight forward. The data: ink ratio is high, the focus of the figure is to display individual data points and there are is no unnecessary visual clutter. The legend and shapes distinguishing habitat type aids in visual understanding without over complicating the figure. 
+This figure is ascetically clear; it is clean, easy to interpret, and straight forward. The data: ink ratio is high, the focus of the figure is to display individual data points and there are is no unnecessary visual clutter. The legend and shapes distinguishing habitat type aids in visual understanding without over complicating the figure.
 
-## d. 
+## d.
 
-To improve the figure, I recommend adding regression lines, and R^2 value, and p-values to clearly illustrate the significance and strength of relationships as described in the text. Without these visual elements the readers are forced to connect what they have read to the visualization instead of providing concise and informative figure. The author could even go further to include confidence intervals to demonstrate uncertainty. These added visual elements would allow the figure to standalone instead of relying on text to convey a summary of the data. 
-
+To improve the figure, I recommend adding regression lines, and R\^2 value, and p-values to clearly illustrate the significance and strength of relationships as described in the text. Without these visual elements the readers are forced to connect what they have read to the visualization instead of providing concise and informative figure. The author could even go further to include confidence intervals to demonstrate uncertainty. These added visual elements would allow the figure to standalone instead of relying on text to convey a summary of the data.
