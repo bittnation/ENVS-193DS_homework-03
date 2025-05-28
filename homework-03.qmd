@@ -7,7 +7,7 @@ editor: visual
 
 GitHub Repository: https://github.com/bittnation/ENVS-193DS_homework-03.git
 
-```{r reading-packages}
+```{r message=FALSE}
 
 library(tidyverse)
 library(here)
@@ -25,13 +25,13 @@ I could calculate the mean hours of productivity to compare between locations, s
 
 ## b. Visualization
 
-```{r}
+```{r message=FALSE}
 
 personal_data <- read_csv("Personal_data_1.csv") #reading in data frame
 
 ```
 
-```{r  cleaning-data}
+```{r  warning=FALSE}
 
 personal_data_clean <- personal_data |>
    clean_names() |>
@@ -98,7 +98,7 @@ My personal data affective visualization could be a strip based piece of art whe
 
 ## c. visualization draft
 
-![](images/Screenshot 2025-05-28 at 1.25.37 PM.png)
+![](images/Screenshot%202025-05-28%20at%201.25.37%20PM.png)
 
 ## d. artist statement
 
